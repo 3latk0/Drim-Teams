@@ -1,0 +1,7 @@
+{
+  "name": "DRIM Photography",
+  "description": "A high-end photography service website featuring an interactive budget calculator and an AI-powered session consultant powered by Gemini.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
