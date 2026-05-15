@@ -18,6 +18,7 @@ export interface PricingConstants {
   HOUR_PRICE: number;
   SESSION_PRICE: number;
   BOOK_PRICE: number;
+  BOOK_ADDITIONAL_PRICE?: number;
   DRONE_PRICE: number;
   MIN_BUDGET: number;
   STEP: number;

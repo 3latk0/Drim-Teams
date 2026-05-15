@@ -10,6 +10,7 @@ export const translations = {
     hero: {
       title: "Capturing Timeless Moments.",
       description: "Professional wedding services tailored to your budget. From photography to cinematic videography, we frame your story with elegance.",
+      descriptionPromo: "To celebrate the 20th season of our wedding studio, we’re giving all couples a special 20% discount on our wedding photo and video services.",
       planButton: "Plan Your Session",
       viewWork: "View Work"
     },
@@ -40,6 +41,7 @@ export const translations = {
       droneVideo: "Drone Videography",
       secondPhoto: "Second Photographer",
       secondVideo: "Second Videographer",
+      multiCam: "MULTI-CAM edit +35€/h",
       totalCost: "Total estimated cost for",
       perHour: "per hour",
       perSession: "per session",
@@ -49,21 +51,28 @@ export const translations = {
       promoAlert: "PROMO ALERT",
       promoText: "Select 10+ hours to get 1 free session!",
       freeSession: "1 FREE SESSION",
-      freeSessionHint: "(get 1 free if 10+ Photography Hours)",
+      freeSessionHint: "Get 1 free if 10+ Photography Hours",
       droneDiscount: "DRONE MULTI-DISCOUNT",
-      droneDiscountHint: "50% off for each additional drone session"
+      droneDiscountHint: "50% off for each additional drone session",
+      bookAdditional: "129 € for each additional copy",
+      bundleDiscount: "Bundle Discount (10%)",
+      earlyBirdDiscount: "for 20-th season",
+      bundleAlert: "BUNDLE SAVINGS",
+      earlyBirdAlert: "EARLY BOOKING",
+      bundleText: "Get 10% off hourly rates when booking both Photo & Video!",
+      earlyBirdText: "Book for 2026 and save 20% on all hourly rates!",
     },
     summary: {
       previewTitle: "Package Narrative Preview",
       estimatedInvestment: "Estimated Investment",
-      bookExperience: "Book Your Experience",
+      bookExperience: "Send Request",
       plusTravel: "plus travel expenses",
       narrativeTemplates: {
         introNameTown: "My name is {name} and I am planning an event in {town} on the {date}.",
         introName: "My name is {name} and I am planning an event on the {date}.",
         introTown: "I am planning an event in {town} on the {date}.",
         introBase: "I am planning an event on the {date}.",
-        schedule: "I am interested in booking your services from {start} until {end} ({duration}).",
+        schedule: "I am interested in booking your services starting from {start}.",
         contactEmailPhone: "You can reach me at {email} or by phone at {phone}.",
         contactEmail: "You can reach me at {email}.",
         contactPhone: "You can reach me by phone at {phone}.",
@@ -81,16 +90,16 @@ export const translations = {
         videoCrane: "Please include {count} Crane filming locations as part of the coverage. ",
         videoDrone: "I'd also like to have {count} drone video session(s) included. ",
         content: "I would also like to have a dedicated Content Creator on-site for {hours} hours to capture social-ready moments.",
-        total: "The total estimated investment for this personalized package comes to {total} € plus travel expenses."
+        total: "The total estimated investment for this personalized package comes to {total} € + TRAVEL EXPENSES."
       }
     },
     modal: {
       title: "Secure your date",
       subtitle: "Complete your request details.",
       fullName: "Full Name",
-      email: "Email Address",
-      location: "Town / Location",
-      phone: "Mobile Phone",
+      email: "E-mail",
+      location: "Location",
+      phone: "Phone",
       summaryLabel: "Selected Package Summary",
       noteLabel: "Additional Note",
       notePlaceholder: "Tell us more about your event...",
@@ -99,13 +108,14 @@ export const translations = {
     chat: {
       title: "Session Consultant",
       subtitle: "Powered by Gemini",
-      initial: "Hi! I'm your DRIM TEAMS AI Consultant. I see you're looking at a {budget} € budget. What kind of memories are we capturing? (e.g., Wedding, Corporate, or a Personal Portrait session?)",
+      initial: "Hi! I'm your DIGITALIN STUDIO AI Consultant. I see you're looking at a {budget} € budget. What kind of memories are we capturing? (e.g., Wedding, Corporate, or a Personal Portrait session?)",
       placeholder: "Ask about your shoot idea...",
       thinking: "Thinking..."
     },
     footer: {
       investment: "Target Budget",
       calculatedInvestment: "Calculated Total",
+      denarSuffix: "den.",
       liveEstimate: "Live Estimate",
       contact: "Contact",
       address: "Struga, Macedonia",
@@ -122,6 +132,7 @@ export const translations = {
     hero: {
       title: "Зачувување безвременски моменти.",
       description: "Професионални свадбени услуги прилагодени на вашиот буџет. Од фотографија до кинематографска видеографија, ја врамуваме вашата приказна со елеганција.",
+      descriptionPromo: "По повод 20-тата сезона на нашето свадбено студио, им доделуваме на сите парови специјален попуст од 20% на нашите услуги за свадбена фотографија и видео.",
       planButton: "Планирајте сесија",
       viewWork: "Види портфолио"
     },
@@ -152,6 +163,7 @@ export const translations = {
       droneVideo: "Дрон видео",
       secondPhoto: "Втор фотограф",
       secondVideo: "Втор снимател",
+      multiCam: "MULTI-CAM edit +35€/h",
       totalCost: "Вкупен проценет трошок за",
       perHour: "по час",
       perSession: "по сесија",
@@ -161,21 +173,28 @@ export const translations = {
       promoAlert: "АКЦИЈА",
       promoText: "Изберете 10+ часови за 1 гратис сесија!",
       freeSession: "1 ГРАТИС СЕСИЈА",
-      freeSessionHint: "(добивате 1 гратис со 10+ часови Фотографија)",
+      freeSessionHint: "Бесплатна фото-сесија со 10+ часови Фотографија",
       droneDiscount: "ПОПУСТ ЗА ПОВЕЌЕ ДРОН СЕСИИ",
-      droneDiscountHint: "50% попуст за секоја следна дрон сесија"
+      droneDiscountHint: "50% попуст за секоја следна дрон сесија",
+      bookAdditional: "129 € за секоја дополнителна копија",
+      bundleDiscount: "Пакетен попуст (10%)",
+      earlyBirdDiscount: "за 20-та сезона",
+      bundleAlert: "ПАКЕТНА ЗАШТЕДА",
+      earlyBirdAlert: "РАНА РЕЗЕРВАЦИЈА",
+      bundleText: "Добијте 10% попуст на цената по час со Photo & Video пакет!",
+      earlyBirdText: "Резервирајте за 2026 и заштедете 20% на цената по час!",
     },
     summary: {
       previewTitle: "Преглед на пакетот",
       estimatedInvestment: "Проценета инвестиција",
-      bookExperience: "Резервирајте го вашето искуство",
+      bookExperience: "Испрати барање",
       plusTravel: "плус патни трошоци",
       narrativeTemplates: {
         introNameTown: "Моето име е {name} и планирам настан во {town} на {date}.",
         introName: "Моето име е {name} и планирам настан на {date}.",
         introTown: "Планирам настан во {town} на {date}.",
         introBase: "Планирам настан на {date}.",
-        schedule: "Заинтересиран/а сум за вашите услуги од {start} до {end} ({duration}).",
+        schedule: "Заинтересиран/а сум за вашите услуги со почеток од {start}.",
         contactEmailPhone: "Можете да ме контактирате на {email} или на телефон {phone}.",
         contactEmail: "Можете да ме контактирате на {email}.",
         contactPhone: "Можете да ме контактирате на телефон {phone}.",
@@ -193,16 +212,16 @@ export const translations = {
         videoCrane: "Ве молам вклучете {count} локации со снимање со кран. ",
         videoDrone: "Исто така, би сакал/а {count} дрон видео сесија/и да бидат вклучени. ",
         content: "Би сакал/а исто така да има посебен Content Creator за {hours} часови за социјалните медиуми.",
-        total: "Вкупната проценета инвестиција за овој пакет изнесува {total} € плус патни трошоци."
+        total: "Вкупната проценета инвестиција за овој пакет изнесува {total} € + ПАТНИ ТРОШОЦИ."
       }
     },
     modal: {
       title: "Резервирајте датум",
       subtitle: "Пополнете ги деталите за вашето барање.",
       fullName: "Целосно име",
-      email: "Е-пошта",
-      location: "Град / Локација",
-      phone: "Мобилен телефон",
+      email: "E-mail",
+      location: "Локација",
+      phone: "Телефон",
       summaryLabel: "Преглед на избраниот пакет",
       noteLabel: "Дополнителна забелешка",
       notePlaceholder: "Кажете ни повеќе за вашиот настан...",
@@ -211,13 +230,14 @@ export const translations = {
     chat: {
       title: "Консултант за сесии",
       subtitle: "Поддржано од Gemini",
-      initial: "Здраво! Јас сум вашиот DRIM TEAMS AI консултант. Гледам дека планирате буџет од {budget} €. Какви спомени ќе овековечиме? (на пр. Свадба, Корпоративен настан или Портретна сесија?)",
+      initial: "Здраво! Јас сум вашиот DIGITALIN STUDIO AI консултант. Гледам дека планирате буџет од {budget} €. Какви спомени ќе овековечиме? (на пр. Свадба, Корпоративен настан или Портретна сесија?)",
       placeholder: "Прашајте за вашата идеја...",
       thinking: "Размислувам..."
     },
     footer: {
       investment: "Планиран Буџет",
       calculatedInvestment: "Пресметана Сума",
+      denarSuffix: "ден.",
       liveEstimate: "Проценка во живо",
       contact: "Контакт",
       address: "Струга, Македонија",
@@ -234,6 +254,7 @@ export const translations = {
     hero: {
       title: "Kapja e Momenteve të Përjetshme.",
       description: "Shërbime profesionale dasme të përshtatura për buxhetin tuaj. Nga fotografia te videografia kinematografike, ne kornizojmë historinë tuaj me elegancë.",
+      descriptionPromo: "Për të festuar sezonin e 20-të të studios sonë të dasmave, ne po u japim të gjithë çifteve një zbritje speciale prej 20% në shërbimet tona të fotografisë dhe videove të dasmës.",
       planButton: "Planifikoni Sesionin",
       viewWork: "Shikoni Punën"
     },
@@ -264,6 +285,7 @@ export const translations = {
       droneVideo: "Video me Dron",
       secondPhoto: "Fotografi i Dytë",
       secondVideo: "Videografi i Dytë",
+      multiCam: "MULTI-CAM edit +35€/h",
       totalCost: "Kostoja totale e vlerësuar për",
       perHour: "për orë",
       perSession: "për sesion",
@@ -275,19 +297,26 @@ export const translations = {
       freeSession: "1 SESION FALAS",
       freeSessionHint: "(merrni 1 falas nëse zgjidhni 10+ orë Fotografi)",
       droneDiscount: "SKONTO PËR SHUMË DRONË",
-      droneDiscountHint: "50% skonto për çdo sesion tjetër me dron"
+      droneDiscountHint: "50% skonto për çdo sesion tjetër me dron",
+      bookAdditional: "129 € për çdo kopje shtesë",
+      bundleDiscount: "Skonto Pakete (10%)",
+      earlyBirdDiscount: "për sezonin e 20-të",
+      bundleAlert: "KURSIME PAKETE",
+      earlyBirdAlert: "REZERVIM I HERSHËM",
+      bundleText: "Përfitoni 10% ulje në çmimet për orë duke rezervuar Foto & Video!",
+      earlyBirdText: "Rezervoni për vitin 2026 dhe kurseni 20% në të gjitha çmimet për orë!",
     },
     summary: {
       previewTitle: "Parashikimi i Paketës",
       estimatedInvestment: "Investimi i Vlerësuar",
-      bookExperience: "Rezervoni Përvojën Tuaj",
+      bookExperience: "Dërgo kërkesën",
       plusTravel: "plus shpenzimet e udhëtimit",
       narrativeTemplates: {
         introNameTown: "Emri im është {name} dhe po planifikoj një event në {town} më {date}.",
         introName: "Emri im është {name} og po planifikoj një event më {date}.",
         introTown: "Po planifikoj një event në {town} më {date}.",
         introBase: "Po planifikoj një event më {date}.",
-        schedule: "Jam i interesuar të rezervoj shërbimet tuaja nga ora {start} deri në {end} ({duration}).",
+        schedule: "Jam i interesuar të rezervoj shërbimet tuaja duke filluar nga ora {start}.",
         contactEmailPhone: "Mund të më kontaktoni në {email} o me telefon në {phone}.",
         contactEmail: "Mund të më kontaktoni në {email}.",
         contactPhone: "Mund të më kontaktoni me telefon në {phone}.",
@@ -305,16 +334,16 @@ export const translations = {
         videoCrane: "Ju lutem përfshini {count} lokacione të xhirimit me Crane si pjesë e mbulimit. ",
         videoDrone: "Gjithashtu do të dëshiroja të përfshija {count} sesion(e) video me dron. ",
         content: "Gjithashtu dëshiroj të kem një Content Creator të dedikuar në vendngjarje për {hours} orë.",
-        total: "Investimi total i vlerësuar për këtта paketë të personalizuar shkon në {total} € plus shpenzimet e udhëtimit."
+        total: "Investimi total i vlerësuar për këtта paketë të personalizuar shkon në {total} € + SHPENZIMET E UDHËTIMIT."
       }
     },
     modal: {
       title: "Siguroni datën tuaj",
       subtitle: "Plotësoni detajet e kërkesës suaj.",
       fullName: "Emri i Plotë",
-      email: "Adresa Email",
-      location: "Qyteti / Lokacioni",
-      phone: "Telefoni Celular",
+      email: "E-mail",
+      location: "Lokacioni",
+      phone: "Telefoni",
       summaryLabel: "Përmbledhja e Paketës së Zgjedhur",
       noteLabel: "Shënim Shtesë",
       notePlaceholder: "Na tregoni më shumë për eventin tuaj...",
@@ -323,13 +352,14 @@ export const translations = {
     chat: {
       title: "Konsulent i Sesionit",
       subtitle: "Mundësuar nga Gemini",
-      initial: "Përshëndetje! Unë jam Konsulenti juaj AI i DRIM TEAMS. Shoh që po shikoni një buxhet prej {budget} €. Çfarë kujtimesh po kapim? (p.sh., Dasmë, Korporatë ose një sesion Portreti Personal?)",
+      initial: "Përshëndetje! Unë jam Konsulenti juaj AI i DIGITALIN STUDIO. Shoh që po shikoni një buxhet prej {budget} €. Çfarë kujtimesh po kapim? (p.sh., Dasmë, Korporatë ose një sesion Portreti Personal?)",
       placeholder: "Pyesni për idenë tuaj të xhirimit...",
       thinking: "Duke menduar..."
     },
     footer: {
       investment: "Buxheti i Synuar",
       calculatedInvestment: "Kosto e Përllogaritur",
+      denarSuffix: "den.",
       liveEstimate: "Vlerësimi i Drejtpërdrejtë",
       contact: "Kontakti",
       address: "Strugë, Maqedoni",

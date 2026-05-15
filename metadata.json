@@ -1,7 +1,8 @@
 {
-  "name": "DRIM Photography",
-  "description": "A high-end photography service website featuring an interactive budget calculator and an AI-powered session consultant powered by Gemini.",
+  "name": "DIGITALIN STUDIO",
+  "description": "High-end luxury photography and videography studio based in Macedonia, featuring interactive booking and AI-powered session planning.",
   "requestFramePermissions": [
     "camera"
-  ]
+  ],
+  "majorCapabilities": []
 }

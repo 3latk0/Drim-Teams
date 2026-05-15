@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DRIM TEAMS | Luxury Photography</title>
+    <title>DIGITALIN STUDIO | Luxury Photography</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
@@ -24,11 +25,32 @@
         }
     </script>
     <style>
-        body { background-color: #fcfcfc; color: #1a1a1a; }
+        body { background-color: #fcfcfc; color: #1a1a1a; transition: background-color 0.3s ease, color 0.3s ease; }
+        .dark body { background-color: #0d0d0d; color: #fcfcfc; }
         .glass-morphism {
             background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: background 0.3s ease, border-color 0.3s ease;
+        }
+        .dark .glass-morphism {
+            background: rgba(13, 13, 13, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Autofill overrides for dark mode */
+        .dark input:-webkit-autofill,
+        .dark input:-webkit-autofill:hover, 
+        .dark input:-webkit-autofill:focus, 
+        .dark input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px #2a2a2a inset !important;
+            -webkit-text-fill-color: #ffffff !important;
+            transition: background-color 5000s ease-in-out 0s;
+        }
+
+        /* Adjust color scheme for scrollbars and system UI */
+        html.dark {
+            color-scheme: dark;
         }
     </style>
 <script type="importmap">
@@ -41,8 +63,10 @@
   }
 }
 </script>
+<link rel="stylesheet" href="/index.css">
 </head>
 <body>
     <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
 </body>
 </html>
