@@ -10,7 +10,7 @@ export const translations = {
     hero: {
       title: "Capturing Timeless Moments.",
       description: "Professional wedding services tailored to your budget. From photography to cinematic videography, we frame your story with elegance.",
-      descriptionPromo: "To celebrate the 20th season of our wedding studio, we’re giving all couples a special 20% discount on our wedding photo and video services.",
+      descriptionPromo: "To celebrate the 20th season of our wedding studio, we’re giving all couples a special 20% discount on our wedding photo and video services...",
       planButton: "Plan Your Session",
       viewWork: "View Work"
     },
@@ -132,7 +132,7 @@ export const translations = {
     hero: {
       title: "Зачувување безвременски моменти.",
       description: "Професионални свадбени услуги прилагодени на вашиот буџет. Од фотографија до кинематографска видеографија, ја врамуваме вашата приказна со елеганција.",
-      descriptionPromo: "По повод 20-тата сезона на нашето свадбено студио, им доделуваме на сите парови специјален попуст од 20% на нашите услуги за свадбена фотографија и видео.",
+      descriptionPromo: "По повод 20-тата сезона на нашето свадбено студио, им доделуваме на сите парови специјален попуст од 20% на нашите услуги за свадбена фотографија и видео...",
       planButton: "Планирајте сесија",
       viewWork: "Види портфолио"
     },
@@ -254,7 +254,7 @@ export const translations = {
     hero: {
       title: "Kapja e Momenteve të Përjetshme.",
       description: "Shërbime profesionale dasme të përshtatura për buxhetin tuaj. Nga fotografia te videografia kinematografike, ne kornizojmë historinë tuaj me elegancë.",
-      descriptionPromo: "Për të festuar sezonin e 20-të të studios sonë të dasmave, ne po u japim të gjithë çifteve një zbritje speciale prej 20% në shërbimet tona të fotografisë dhe videove të dasmës.",
+      descriptionPromo: "Për të festuar sezonin e 20-të të studios sonë të dasmave, ne po u japim të gjithë çifteve një zbritje speciale prej 20% në shërbimet tona të fotografisë dhe videove të dasmës...",
       planButton: "Planifikoni Sesionin",
       viewWork: "Shikoni Punën"
     },
