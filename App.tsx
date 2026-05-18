@@ -25,6 +25,8 @@ const App: React.FC = () => {
 
   // Booking Modal State
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+  const [sendError, setSendError] = useState<string | null>(null);
   const [bookingForm, setBookingForm] = useState({
     name: '',
     email: '',
@@ -204,24 +206,48 @@ const App: React.FC = () => {
 
   const narrativeParagraphs = useMemo(() => getNarrativeParagraphs(lang), [lang, getNarrativeParagraphs]);
 
-  const handleSendBooking = () => {
-    if (!bookingForm.email.trim()) return;
+  const handleSendBooking = async () => {
+    if (!bookingForm.email.trim() || isSending) return;
 
-    const selectedNarrative = getNarrativeParagraphs(lang).join('\n\n');
+    setIsSending(true);
+    setSendError(null);
+
+    const packageSummary = getNarrativeParagraphs(lang).join('\n\n');
     const englishNarrative = lang === 'en' ? '' : `--- English Translation ---\n\n${getNarrativeParagraphs('en').join('\n\n')}\n\n`;
     
-    const noteBlock = bookingForm.additionalNote ? `${t.modal.noteLabel}:\n"${bookingForm.additionalNote}"\n\n` : '';
-    
-    let bodyText = `Hello DIGITALIN STUDIO,\n\nI would like to inquire about a booking with the following details:\n\n`;
-    bodyText += `${selectedNarrative}\n\n`;
-    if (englishNarrative) bodyText += `${englishNarrative}`;
-    bodyText += `${noteBlock}I look forward to hearing from you soon!\n\nBest regards,\n${bookingForm.name || 'Client'}`;
+    try {
+      const response = await fetch('/api/send-request', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: bookingForm.name,
+          email: bookingForm.email,
+          phone: bookingForm.phone,
+          location: bookingForm.town,
+          packageSummary: `${packageSummary}\n\n${englishNarrative}`,
+          investment: grandTotal,
+          additionalNote: bookingForm.additionalNote,
+        }),
+      });
 
-    const ccEmail = bookingForm.email.trim();
-    const mailtoUrl = `mailto:3latko@gmail.com?cc=${ccEmail}&subject=Booking Request - DIGITALIN STUDIO&body=${encodeURIComponent(bodyText)}`;
-    
-    window.location.href = mailtoUrl;
-    setIsModalOpen(false);
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to send request');
+      }
+
+      // Success!
+      setIsModalOpen(false);
+      // Reset form
+      setBookingForm({ name: '', email: '', town: '', phone: '', additionalNote: '' });
+      alert(lang === 'mk' ? 'Барањето е успешно испратено!' : lang === 'sq' ? 'Kërkesa u dërgua me sukses!' : 'Request sent successfully!');
+    } catch (error) {
+      console.error('Error sending booking:', error);
+      setSendError(error instanceof Error ? error.message : 'Something went wrong');
+    } finally {
+      setIsSending(false);
+    }
   };
 
   const isEmailValid = bookingForm.email.trim().length > 0;
@@ -469,13 +495,24 @@ const App: React.FC = () => {
                   <label className="text-[10px] font-bold uppercase tracking-widest text-accent">{t.modal.noteLabel}</label>
                   <textarea rows={3} value={bookingForm.additionalNote} onChange={(e) => setBookingForm(prev => ({ ...prev, additionalNote: e.target.value }))} className={`w-full border rounded-2xl px-4 py-3 text-sm focus:outline-none resize-none transition-colors ${isDarkMode ? 'bg-[#2a2a2a] border-white/10 text-white focus:border-accent/40' : 'bg-gray-50 border-gray-100 focus:border-accent/20'}`} placeholder={t.modal.notePlaceholder}/>
                 </div>
+                {sendError && (
+                  <p className="text-red-500 text-xs font-bold text-center animate-pulse">{sendError}</p>
+                )}
               </div>
               <button 
                 onClick={handleSendBooking} 
-                disabled={!isEmailValid}
-                className={`w-full py-4 rounded-full font-bold uppercase tracking-widest text-xs shadow-lg transition-all ${isEmailValid ? (isDarkMode ? 'bg-accent text-white hover:bg-accent/80' : 'bg-primary text-white hover:bg-gray-800') : (isDarkMode ? 'bg-white/10 text-gray-500 cursor-not-allowed' : 'bg-gray-200 text-gray-400 cursor-not-allowed')}`}
+                disabled={!isEmailValid || isSending}
+                className={`w-full py-4 rounded-full font-bold uppercase tracking-widest text-xs shadow-lg transition-all ${isEmailValid && !isSending ? (isDarkMode ? 'bg-accent text-white hover:bg-accent/80' : 'bg-primary text-white hover:bg-gray-800') : (isDarkMode ? 'bg-white/10 text-gray-500 cursor-not-allowed' : 'bg-gray-200 text-gray-400 cursor-not-allowed')}`}
               >
-                {t.modal.sendButton}
+                {isSending ? (
+                  <span className="flex items-center justify-center space-x-2">
+                    <svg className="animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    <span>{lang === 'mk' ? 'Се испраќа...' : lang === 'sq' ? 'Duke u dërguar...' : 'Sending...'}</span>
+                  </span>
+                ) : t.modal.sendButton}
               </button>
             </div>
           </div>
