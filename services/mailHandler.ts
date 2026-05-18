@@ -10,7 +10,11 @@ export async function sendMail(body: any) {
   const CONTACT_EMAIL = process.env.CONTACT_EMAIL || "digitalin.studio@gmail.com";
 
   if (!SMTP_USER || !SMTP_PASS) {
-    throw new Error("SMTP credentials are not configured in environment variables");
+    const missing = [];
+    if (!SMTP_USER) missing.push("SMTP_USER");
+    if (!SMTP_PASS) missing.push("SMTP_PASS");
+    console.error(`Missing SMTP configuration: ${missing.join(", ")}`);
+    throw new Error(`SMTP credentials are not configured (${missing.join(", ")}). Please add them to Vercel Environment Variables.`);
   }
 
   const transporter = nodemailer.createTransport({
