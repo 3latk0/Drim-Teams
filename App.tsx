@@ -233,8 +233,22 @@ const App: React.FC = () => {
       });
 
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || 'Failed to send request');
+        let errorMessage = 'Failed to send request';
+        const contentType = response.headers.get('content-type');
+        if (contentType && contentType.includes('application/json')) {
+          const errorData = await response.json();
+          errorMessage = errorData.error || errorMessage;
+        } else {
+          const textError = await response.text();
+          console.error('Non-JSON error response:', textError);
+          // If it looks like HTML, give a generic error
+          if (textError.includes('<!DOCTYPE html>') || textError.includes('<html')) {
+            errorMessage = 'Server error: Invalid response format (HTML instead of JSON). The API route might be missing or the server might have crashed.';
+          } else {
+            errorMessage = textError.slice(0, 100);
+          }
+        }
+        throw new Error(errorMessage);
       }
 
       // Success!

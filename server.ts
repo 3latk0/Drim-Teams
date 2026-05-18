@@ -3,6 +3,9 @@ import path from "path";
 import { createServer as createViteServer } from "vite";
 import nodemailer from "nodemailer";
 import cors from "cors";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 // SMTP credentials should ideally be in process.env
 const SMTP_HOST = process.env.SMTP_HOST || "smtp.mailersend.net";
@@ -31,7 +34,7 @@ async function startServer() {
       const transporter = nodemailer.createTransport({
         host: SMTP_HOST,
         port: SMTP_PORT,
-        secure: SMTP_PORT === 465, // true for 465, false for other ports
+        secure: SMTP_PORT === 465, 
         auth: {
           user: SMTP_USER,
           pass: SMTP_PASS,
@@ -39,7 +42,7 @@ async function startServer() {
       });
 
       const mailOptions = {
-        from: `"Digital In Booking" <${SMTP_USER}>`,
+        from: `"ZLaTkoM" <${SMTP_USER}>`,
         to: CONTACT_EMAIL,
         replyTo: email,
         subject: `New Booking Request from ${name}`,
