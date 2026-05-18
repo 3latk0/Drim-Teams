@@ -46,7 +46,7 @@ async function startServer() {
     const distPath = path.join(process.cwd(), 'dist');
     // Check if dist exists, if not, we might be in a weird state
     app.use(express.static(distPath));
-    app.get('*', (req, res) => {
+    app.get('*all', (req, res) => {
       res.sendFile(path.join(distPath, 'index.html'));
     });
   }
