@@ -67,6 +67,7 @@ const HeroSlideshow: React.FC = () => {
             src={src}
             alt={`Slide ${index + 1}`}
             className="w-full h-full object-cover transform scale-105"
+            referrerPolicy="no-referrer"
           />
         </div>
       ))}

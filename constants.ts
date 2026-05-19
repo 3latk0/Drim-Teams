@@ -36,6 +36,7 @@ export const CONTENT_PRICING: PricingConstants = {
 export const PRICING = PHOTO_PRICING;
 
 export const HERO_IMAGES = [
+  '/hero.png',
   'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1200', // Wedding session (user placeholder)
   'https://images.unsplash.com/photo-1554080353-a576cf803bda?auto=format&fit=crop&q=80&w=1200', // Professional camera
   'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1200', // Wedding Couple 1
