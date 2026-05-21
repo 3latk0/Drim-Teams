@@ -36,12 +36,11 @@ export const CONTENT_PRICING: PricingConstants = {
 export const PRICING = PHOTO_PRICING;
 
 export const HERO_IMAGES = [
-  '/hero.png',
-  'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1200', // Wedding session (user placeholder)
-  'https://images.unsplash.com/photo-1554080353-a576cf803bda?auto=format&fit=crop&q=80&w=1200', // Professional camera
-  'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1200', // Wedding Couple 1
-  'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=1200', // Wedding Reception
-  'https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=1200'  // Wedding Ceremony
+  'https://www.image2url.com/r2/default/images/1779385853351-4d05c3ca-b853-4923-8841-c6f79e33903d.webp',
+  'https://www.image2url.com/r2/default/images/1779385992051-139739e5-4b01-4cc0-b199-bdc0418ee897.webp',
+  'https://www.image2url.com/r2/default/images/1779385945797-77694e1d-0722-456d-b31a-592edf6694df.webp',
+  'https://www.image2url.com/r2/default/images/1779385969886-2060f1ff-6d67-49aa-afcb-09cfbb1b560d.webp',
+  'https://www.image2url.com/r2/default/images/1779385925342-3bcb3ca0-ed35-4f45-851a-24c79ad95796.webp'
 ];
 
 export const PORTFOLIO_IMAGES = [
