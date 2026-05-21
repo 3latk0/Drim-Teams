@@ -255,7 +255,7 @@ const App: React.FC = () => {
       setIsModalOpen(false);
       // Reset form
       setBookingForm({ name: '', email: '', town: '', phone: '', additionalNote: '' });
-      alert(lang === 'mk' ? 'Барањето е успешно испратено!' : lang === 'sq' ? 'Kërkesa u dërgua me sukses!' : 'Request sent successfully!');
+      alert(t.modal.successAlert);
     } catch (error) {
       console.error('Error sending booking:', error);
       setSendError(error instanceof Error ? error.message : 'Something went wrong');

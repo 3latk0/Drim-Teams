@@ -103,7 +103,8 @@ export const translations = {
       summaryLabel: "Selected Package Summary",
       noteLabel: "Additional Note",
       notePlaceholder: "Tell us more about your event...",
-      sendButton: "Send Request via Email"
+      sendButton: "Send Request via Email",
+      successAlert: "Thank you for your request! We appreciate you reaching out and will contact you in the shortest possible time."
     },
     chat: {
       title: "Session Consultant",
@@ -225,7 +226,8 @@ export const translations = {
       summaryLabel: "Преглед на избраниот пакет",
       noteLabel: "Дополнителна забелешка",
       notePlaceholder: "Кажете ни повеќе за вашиот настан...",
-      sendButton: "Испрати барање преку е-пошта"
+      sendButton: "Испрати барање преку е-пошта",
+      successAlert: "Ви благодариме за вашето барање! Ви благодариме што ни се обративте, ќе Ве контактираме во најкраток можен рок."
     },
     chat: {
       title: "Консултант за сесии",
@@ -347,7 +349,8 @@ export const translations = {
       summaryLabel: "Përmbledhja e Paketës së Zgjedhur",
       noteLabel: "Shënim Shtesë",
       notePlaceholder: "Na tregoni më shumë për eventin tuaj...",
-      sendButton: "Dërgo Kërkesën me Email"
+      sendButton: "Dërgo Kërkesën me Email",
+      successAlert: "Ju faleminderit për kërkesën tuaj! Ju falënderojmë që na kontaktuat, do t'ju kontaktojmë në kohën më të shkurtër të mundshme."
     },
     chat: {
       title: "Konsulent i Sesionit",
