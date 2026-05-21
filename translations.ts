@@ -336,7 +336,7 @@ export const translations = {
         videoCrane: "Ju lutem përfshini {count} lokacione të xhirimit me Crane si pjesë e mbulimit. ",
         videoDrone: "Gjithashtu do të dëshiroja të përfshija {count} sesion(e) video me dron. ",
         content: "Gjithashtu dëshiroj të kem një Content Creator të dedikuar në vendngjarje për {hours} orë.",
-        total: "Investimi total i vlerësuar për këtта paketë të personalizuar shkon në {total} € + SHPENZIMET E UDHËTIMIT."
+        total: "Investimi total i vlerësuar për këtë paketë të personalizuar shkon në {total} € + SHPENZIMET E UDHËTIMIT."
       }
     },
     modal: {
@@ -355,7 +355,7 @@ export const translations = {
     chat: {
       title: "Konsulent i Sesionit",
       subtitle: "Mundësuar nga Gemini",
-      initial: "Përshëndetje! Unë jam Konsulenti juaj AI i DIGITALIN STUDIO. Shoh që po shikoni një buxhet prej {budget} €. Çfarë kujtimesh po kapim? (p.sh., Dasmë, Korporatë ose një sesion Portreti Personal?)",
+      initial: "Përshëndetje! Unë jam Konsulenti juaj AI i DIGITALIN STUDIO. Shoh që po shikoni një buxhet prej {budget} €. Çfarë kujtimesh po kapim? (p.sh., Dasmë, Korporatë ose një sesion Portriti Personal?)",
       placeholder: "Pyesni për idenë tuaj të xhirimit...",
       thinking: "Duke menduar..."
     },
@@ -367,6 +367,129 @@ export const translations = {
       contact: "Kontakti",
       address: "Strugë, Maqedoni",
       mission: "We believe every frame tells a story. Our mission is to provide world-class photography and videography services."
+    }
+  },
+  tr: {
+    nav: {
+      portfolio: "Portfolyo",
+      pricing: "Fiyatlandırma",
+      studio: "Stüdyomuz",
+      bookNow: "Rezervasyon"
+    },
+    hero: {
+      title: "Zamanı Aşan Anları Yakalıyoruz.",
+      description: "Bütçenize göre özelleştirilmiş profesyonel düğün hizmetleri. Fotoğrafçılıktan sinematik videografi hizmetine kadar hikayenizi zarafetle şekillendiriyoruz.",
+      descriptionPromo: "Düğün stüdyomuzun 20. sezonunu kutlamak amacıyla, tüm çiftlerimize düğün fotoğrafı ve video hizmetlerimizde özel %20 indirim sunuyoruz...",
+      planButton: "Çekiminizi Planlayın",
+      viewWork: "Çalışmaları İncele"
+    },
+    scheduling: {
+      title: "Mükemmel gününüzü seçin",
+      dateLabel: "Etkinlik Tarihi",
+      startLabel: "Başlama Saati",
+      endLabel: "Bitiş Saati",
+      duration: "Süre",
+      includeServices: "Dahil Edilen Hizmetler",
+      photography: "Fotoğrafçılık",
+      videography: "Videografi",
+      contentCreator: "İçerik Üretici",
+      months: ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"]
+    },
+    services: {
+      photography: "FOTOĞRAFÇILIK",
+      videography: "VİDEOGRAFİ",
+      contentCreator: "İÇERİK ÜRETİCİ",
+      photoHours: "Fotoğrafçı",
+      videoHours: "Videograf",
+      contentHours: "İçerik Üretici",
+      photoSessions: "Fotoğraf Çekimi",
+      loveStory: "Love-Story",
+      photoBooks: "Fotoğraf Albümü",
+      crane: "Kamera Vinci",
+      dronePhoto: "Drone Fotoğrafçılığı",
+      droneVideo: "Drone Videografisi",
+      secondPhoto: "İkinci Fotoğrafçı",
+      secondVideo: "İkinci Videograf",
+      multiCam: "ÇOKLU KAMERA kurgusu +35€/saat",
+      totalCost: "Tahmini toplam maliyet:",
+      perHour: "saatlik",
+      perSession: "çekim başı",
+      perLoveStory: "Love-Story başı",
+      perBook: "fotoğraf albümü başı (20x30cm, 30 sayfa)",
+      perLocation: "mekan başı",
+      promoAlert: "KAMPANYA UYARISI",
+      promoText: "1 ücretsiz çekim kazanmak için 10+ saat seçin!",
+      freeSession: "1 ÜCRETSİZ ÇEKİM",
+      freeSessionHint: "10+ saat Fotoğrafçılık aldığınızda 1 ücretsiz çekim",
+      droneDiscount: "ÇOKLU DRONE İNDİRİMİ",
+      droneDiscountHint: "Her ek drone çekimi için %50 indirim",
+      bookAdditional: "Her ek kopya için 129 €",
+      bundleDiscount: "Paket İndirimi (%10)",
+      earlyBirdDiscount: "20. sezon için",
+      bundleAlert: "PAKET TASARRUFU",
+      earlyBirdAlert: "ERKEN REZERVASYON",
+      bundleText: "Hem Fotoğraf hem de Video rezervasyonlarında saatlik ücretlerde %10 indirim kazanın!",
+      earlyBirdText: "2026 yılı için rezervasyon yapın ve tüm saatlik ücretlerde %20 tasarruf edin!",
+    },
+    summary: {
+      previewTitle: "Paket Detayları Önizleme",
+      estimatedInvestment: "Tahmini Yatırım",
+      bookExperience: "Talep Gönder",
+      plusTravel: "artı yol masrafları",
+      narrativeTemplates: {
+        introNameTown: "Benim adım {name} ve {date} tarihinde {town} şehrinde bir etkinlik planlıyorum.",
+        introName: "Benim adım {name} ve {date} tarihinde bir etkinlik planlıyorum.",
+        introTown: "{date} tarihinde {town} şehrinde bir etkinlik planlıyorum.",
+        introBase: "{date} tarihinde bir etkinlik planlıyorum.",
+        schedule: "Hizmetlerinizi saat {start} itibarıyla rezerve etmek istiyorum.",
+        contactEmailPhone: "Bana {email} e-posta adresinden veya {phone} telefon numarasından ulaşabilirsiniz.",
+        contactEmail: "Bana {email} e-posta adresinden ulaşabilirsiniz.",
+        contactPhone: "Bana {phone} telefon numarasından ulaşabilirsiniz.",
+        photo: "Fotoğrafçılık için, {hours} saat boyunca {spec} hazır bulunmasını talep ediyorum. {sessions}{books}{drone}",
+        photoSpecSingle: "bir profesyonel fotoğrafçının",
+        photoSpecDouble: "iki fotoğrafçının",
+        photoSessions: "Ayrıca {count} fotoğraf çekimi{complimentary} planlıyorum. ",
+        photoComplimentary: " ve ücretsiz çekimi bu toplama dahil etmek istiyorum",
+        photoBooks: "Ayrıca paketimize {count} adet yüksek kaliteli fotoğraf albümü eklemek istiyorum. ",
+        photoDrone: "Son olarak, lütfen pakete {count} drone fotoğraf çekimi seansı dahil edin. ",
+        video: "Videografi konusunda ise {hours} saat boyunca {spec} rezerve etmek istiyorum. {sessions}{crane}{drone}",
+        videoSpecSingle: "bir profesyonel videografın",
+        videoSpecDouble: "iki videografın",
+        videoSessions: "{count} adet Love-Story çekimi kaydetmekle ilgileniyorum. ",
+        videoCrane: "Kapsama dahilinde, kran (crane) kamera çekimi yapılacak {count} mekan bulunmasını istiyorum. ",
+        videoDrone: "Ayrıca {count} adet drone video çekimi seansını dahil etmek istiyorum. ",
+        content: "Bununla birlikte, sosyal medyaya hazır anları yakalamak üzere {hours} saat boyunca özel bir İçerik Üreticinin alanda bulunmasını istiyorum.",
+        total: "Bu kişiselleştirilmiş paket için tahmini toplam yatırım {total} € + YOL MASRAFLARI şeklindedir."
+      }
+    },
+    modal: {
+      title: "Tarihinizi ayırtın",
+      subtitle: "Talep detaylarınızı tamamlayın.",
+      fullName: "Ad Soyadı",
+      email: "E-posta",
+      location: "Konum",
+      phone: "Telefon",
+      summaryLabel: "Seçilen Paket Özeti",
+      noteLabel: "Ek Not",
+      notePlaceholder: "Etkinliğiniz hakkında bize daha fazla bilgi verin...",
+      sendButton: "Talebi E-posta ile Gönder",
+      successAlert: "Talebiniz için teşekkür ederiz! Bizimle iletişime geçtiğiniz için teşekkür ederiz, en kısa sürede sizinle iletişime geçeceğiz."
+    },
+    chat: {
+      title: "Seans Danışmanı",
+      subtitle: "Gemini Tarafından Desteklenmektedir",
+      initial: "Merhaba! Ben DIGITALIN STUDIO Yapay Zeka Danışmanınız. {budget} € bütçe planladığınızı görüntülüyorum. Bugün nasıl hatıralar yakalayacağız? (Örn. Düğün, Kurumsal etkinlik veya Kişisel Portre çekimi?)",
+      placeholder: "Çekim fikrinizle ilgili soru sorun...",
+      thinking: "Düşünüyor..."
+    },
+    footer: {
+      investment: "Hedef Bütçe",
+      calculatedInvestment: "Hesaplanan Toplam",
+      denarSuffix: "den.",
+      liveEstimate: "Canlı Tahmin",
+      contact: "İletişim",
+      address: "Struga, Makedonya",
+      mission: "Her karenin bir hikaye anlattığına inanıyoruz. Misyonumuz, dünya standartlarında fotoğraf ve video prodüksiyonu hizmetleri sunmaktır."
     }
   }
 };

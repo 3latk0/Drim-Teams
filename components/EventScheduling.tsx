@@ -91,11 +91,12 @@ const EventScheduling: React.FC<EventSchedulingProps> = ({
     const hours = Math.floor(diff / 60);
     const mins = diff % 60;
     
-    const hText = lang === 'en' ? (hours === 1 ? 'hour' : 'hours') : lang === 'mk' ? (hours === 1 ? 'час' : 'часови') : 'orë';
-    const mText = lang === 'en' ? 'm' : lang === 'mk' ? 'м' : 'm';
+    const hText = lang === 'en' ? (hours === 1 ? 'hour' : 'hours') : lang === 'mk' ? (hours === 1 ? 'час' : 'часови') : lang === 'tr' ? 'saat' : 'orë';
+    const mText = lang === 'en' ? 'm' : lang === 'mk' ? 'м' : lang === 'tr' ? 'dk' : 'm';
 
     if (mins > 0) {
-      return `${hours}${lang === 'en' ? 'h' : lang === 'mk' ? 'ч' : 'h'} ${mins}${mText}`;
+      const hUnit = lang === 'en' ? 'h' : lang === 'mk' ? 'ч' : lang === 'tr' ? 'sa' : 'h';
+      return `${hours}${hUnit} ${mins}${mText}`;
     }
     return `${hours} ${hText}`;
   };

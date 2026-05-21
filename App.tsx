@@ -297,6 +297,7 @@ const App: React.FC = () => {
                <button onClick={() => setLang('en')} className={`w-7 h-7 rounded-full flex items-center justify-center text-lg hover:scale-110 transition-transform ${lang === 'en' ? 'ring-2 ring-accent ring-offset-2 dark:ring-offset-[#1a1a1a]' : 'grayscale opacity-60'}`}>🇺🇸</button>
                <button onClick={() => setLang('mk')} className={`w-7 h-7 rounded-full flex items-center justify-center text-lg hover:scale-110 transition-transform ${lang === 'mk' ? 'ring-2 ring-accent ring-offset-2 dark:ring-offset-[#1a1a1a]' : 'grayscale opacity-60'}`}>🇲🇰</button>
                <button onClick={() => setLang('sq')} className={`w-7 h-7 rounded-full flex items-center justify-center text-lg hover:scale-110 transition-transform ${lang === 'sq' ? 'ring-2 ring-accent ring-offset-2 dark:ring-offset-[#1a1a1a]' : 'grayscale opacity-60'}`}>🇦🇱</button>
+               <button onClick={() => setLang('tr')} className={`w-7 h-7 rounded-full flex items-center justify-center text-lg hover:scale-110 transition-transform ${lang === 'tr' ? 'ring-2 ring-accent ring-offset-2 dark:ring-offset-[#1a1a1a]' : 'grayscale opacity-60'}`}>🇹🇷</button>
             </div>
           </div>
         </div>
@@ -524,7 +525,7 @@ const App: React.FC = () => {
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
-                    <span>{lang === 'mk' ? 'Се испраќа...' : lang === 'sq' ? 'Duke u dërguar...' : 'Sending...'}</span>
+                    <span>{lang === 'mk' ? 'Се испраќа...' : lang === 'sq' ? 'Duke u dërguar...' : lang === 'tr' ? 'Gönderiliyor...' : 'Sending...'}</span>
                   </span>
                 ) : t.modal.sendButton}
               </button>
