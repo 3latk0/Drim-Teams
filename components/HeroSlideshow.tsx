@@ -4,6 +4,7 @@ import { HERO_IMAGES } from '../constants';
 
 const HeroSlideshow: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [previousIndex, setPreviousIndex] = useState<number | null>(null);
   const touchStart = useRef<number | null>(null);
   const touchEnd = useRef<number | null>(null);
 
@@ -11,12 +12,29 @@ const HeroSlideshow: React.FC = () => {
   const minSwipeDistance = 50;
 
   const nextSlide = () => {
+    setPreviousIndex(currentIndex);
     setCurrentIndex((prev) => (prev + 1) % HERO_IMAGES.length);
   };
 
   const prevSlide = () => {
+    setPreviousIndex(currentIndex);
     setCurrentIndex((prev) => (prev - 1 + HERO_IMAGES.length) % HERO_IMAGES.length);
   };
+
+  const goToSlide = (index: number) => {
+    if (index === currentIndex) return;
+    setPreviousIndex(currentIndex);
+    setCurrentIndex(index);
+  };
+
+  useEffect(() => {
+    if (previousIndex !== null) {
+      const timer = setTimeout(() => {
+        setPreviousIndex(null);
+      }, 1000); // 1000ms duration of crossfade
+      return () => clearTimeout(timer);
+    }
+  }, [currentIndex, previousIndex]);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -60,14 +78,21 @@ const HeroSlideshow: React.FC = () => {
         <div
           key={index}
           className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-            index === currentIndex ? 'opacity-100' : 'opacity-0'
+            index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
           }`}
         >
           <img
             src={src}
             alt={`Slide ${index + 1}`}
-            className={`w-full h-full object-cover ${
-              index === currentIndex ? 'animate-slow-zoom' : 'transform scale-115'
+            style={{
+              transform: index === currentIndex 
+                ? undefined 
+                : index === previousIndex 
+                ? 'scale(1.00)' 
+                : 'scale(1.15)'
+            }}
+            className={`w-full h-full object-cover select-none ${
+              index === currentIndex ? 'animate-slow-zoom' : ''
             }`}
             referrerPolicy="no-referrer"
           />
@@ -75,11 +100,11 @@ const HeroSlideshow: React.FC = () => {
       ))}
       
       {/* Slide Indicators */}
-      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2">
+      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
         {HERO_IMAGES.map((_, index) => (
           <button
             key={index}
-            onClick={() => setCurrentIndex(index)}
+            onClick={() => goToSlide(index)}
             className={`w-2 h-2 rounded-full transition-all duration-300 ${
               index === currentIndex ? 'bg-white w-6' : 'bg-white/40'
             }`}
