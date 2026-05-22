@@ -61,6 +61,7 @@ export const translations = {
       earlyBirdAlert: "20% DISCOUNT",
       bundleText: "Get 10% off hourly rates when booking both Photo & Video!",
       earlyBirdText: "Save 20% on all hourly rates, valid for season 26/27!",
+      contentCreatorDescription: "Don’t want to wait several weeks for your precious photo and video memories? Our content creators capture the most beautiful moments of your wedding day and share instantly on your social media (Instagram, TikTok etc.)",
     },
     summary: {
       previewTitle: "Package Narrative Preview",
@@ -184,6 +185,7 @@ export const translations = {
       earlyBirdAlert: "20% ПОПУСТ",
       bundleText: "Добијте 10% попуст на цената по час со Photo & Video пакет!",
       earlyBirdText: "Заштедете 20% на сите цени по час, со важност за сезона 26/27!",
+      contentCreatorDescription: "Не сакате да чекате неколку недели за вашите скапоцени фото и видео спомени? Нашите креатори на содржина ги зачувуваат најубавите моменти од вашиот свадбен ден и ги споделуваат веднаш на вашите социјални мрежи (Instagram, TikTok итн.)",
     },
     summary: {
       previewTitle: "Преглед на пакетот",
@@ -307,6 +309,7 @@ export const translations = {
       earlyBirdAlert: "20% ULJE",
       bundleText: "Përfitoni 10% ulje në çmimet për orë duke rezervuar Foto & Video!",
       earlyBirdText: "Kurseni 20% në të gjitha çmimet për orë, e vlefshme për sezonin 26/27!",
+      contentCreatorDescription: "Nuk dëshironi të prisni disa javë për kujtimet tuaja të çmuara në foto dhe video? Krijuesit tanë të përmbajtjes kapin momentet më të bukura të ditës së dasmës suaj dhe i ndajnë ato menjëherë në rrjetet tuaja sociale (Instagram, TikTok etj.)",
     },
     summary: {
       previewTitle: "Parashikimi i Paketës",
@@ -430,6 +433,7 @@ export const translations = {
       earlyBirdAlert: "%20 İNDİRİM",
       bundleText: "Hem Fotoğraf hem de Video rezervasyonlarında saatlik ücretlerde %10 indirim kazanın!",
       earlyBirdText: "Tüm saatlik ücretlerde %20 tasarruf edin, 26/27 sezonu için geçerlidir!",
+      contentCreatorDescription: "Değerli fotoğraf ve video anılarınız için haftalarca beklemek istemiyor musunuz? İçerik oluşturucularımız düğün gününüzün en güzel anlarını yakalar ve bunları sosyal medyanızda (Instagram, TikTok vb.) anında paylaşır.",
     },
     summary: {
       previewTitle: "Paket Detayları Önizleme",

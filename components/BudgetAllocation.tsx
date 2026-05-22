@@ -291,6 +291,13 @@ const BudgetAllocation: React.FC<BudgetAllocationProps> = ({
             </p>
           </div>
           <div className="text-center space-y-4">
+            {type === 'content' && t.contentCreatorDescription && (
+              <div className="max-w-2xl mx-auto px-2">
+                <p className={`text-[13.2px] md:text-sm italic leading-relaxed transition-colors ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                  {t.contentCreatorDescription}
+                </p>
+              </div>
+            )}
             {type === 'photo' && selection.hours < 10 && (
               <div>
                 <p className={`text-[12px] md:text-xs font-medium uppercase tracking-[0.1em] transition-colors ${isDarkMode ? 'text-accent' : 'text-gray-400'}`}>{t.promoAlert}</p>

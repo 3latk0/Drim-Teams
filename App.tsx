@@ -410,7 +410,15 @@ const App: React.FC = () => {
                         </span>
                      </div>
                    </div>
-                   <button onClick={() => setIsModalOpen(true)} className={`w-full md:w-auto px-8 md:px-10 py-5 rounded-full font-bold uppercase tracking-widest text-[10px] md:text-xs hover:scale-105 transition-transform shadow-lg whitespace-nowrap ${isDarkMode ? 'bg-accent text-white' : 'bg-primary text-white'}`}>
+                   <button 
+                      onClick={() => setIsModalOpen(true)} 
+                      disabled={grandTotal === 0}
+                      className={`w-full md:w-auto px-8 md:px-10 py-5 rounded-full font-bold uppercase tracking-widest text-[10px] md:text-xs transition-transform shadow-lg whitespace-nowrap ${
+                        grandTotal === 0
+                          ? 'bg-gray-300 dark:bg-zinc-800 text-gray-400 dark:text-gray-500 cursor-not-allowed opacity-50'
+                          : `hover:scale-105 ${isDarkMode ? 'bg-accent text-white hover:bg-accent/90' : 'bg-primary text-white hover:bg-gray-800'}`
+                      }`}
+                    >
                      {t.summary.bookExperience}
                    </button>
                  </div>
@@ -527,8 +535,12 @@ const App: React.FC = () => {
               </div>
               <button 
                 onClick={handleSendBooking} 
-                disabled={!isEmailValid || isSending}
-                className={`w-full py-4 rounded-full font-bold uppercase tracking-widest text-xs shadow-lg transition-all ${isEmailValid && !isSending ? (isDarkMode ? 'bg-accent text-white hover:bg-accent/80' : 'bg-primary text-white hover:bg-gray-800') : (isDarkMode ? 'bg-white/10 text-gray-500 cursor-not-allowed' : 'bg-gray-200 text-gray-400 cursor-not-allowed')}`}
+                disabled={!isEmailValid || isSending || grandTotal === 0}
+                className={`w-full py-4 rounded-full font-bold uppercase tracking-widest text-xs shadow-lg transition-all ${
+                  isEmailValid && !isSending && grandTotal > 0
+                    ? (isDarkMode ? 'bg-accent text-white hover:bg-accent/80' : 'bg-primary text-white hover:bg-gray-800')
+                    : (isDarkMode ? 'bg-white/10 text-gray-500 cursor-not-allowed' : 'bg-gray-200 text-gray-400 cursor-not-allowed')
+                }`}
               >
                 {isSending ? (
                   <span className="flex items-center justify-center space-x-2">
