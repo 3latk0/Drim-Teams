@@ -247,7 +247,7 @@ const BudgetAllocation: React.FC<BudgetAllocationProps> = ({
                       {labels.specialist}
                     </span>
                     {type === 'video' && (
-                      <span className={`text-[10px] md:text-[11px] font-bold uppercase transition-colors group-hover/check:text-accent ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                      <span className={`text-[10px] md:text-[11px] font-bold transition-colors group-hover/check:text-accent ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
                         {translations[lang].services.multiCam}
                       </span>
                     )}

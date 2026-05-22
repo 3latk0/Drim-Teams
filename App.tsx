@@ -140,7 +140,7 @@ const App: React.FC = () => {
   };
 
   const isBundle = photoSelection.serviceEnabled && videoSelection.serviceEnabled;
-  const isEarlyBird = new Date(eventSchedule.date) < new Date('2027-01-01');
+  const isEarlyBird = new Date(eventSchedule.date) < new Date('2028-01-01');
 
   const currentPhotoTotal = useMemo(() => calculateTotal(photoSelection, PHOTO_PRICING, true, isBundle, isEarlyBird), [photoSelection, calculateTotal, isBundle, isEarlyBird]);
   const currentVideoTotal = useMemo(() => calculateTotal(videoSelection, VIDEO_PRICING, false, isBundle, isEarlyBird), [videoSelection, calculateTotal, isBundle, isEarlyBird]);
