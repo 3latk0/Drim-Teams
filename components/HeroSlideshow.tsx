@@ -66,7 +66,9 @@ const HeroSlideshow: React.FC = () => {
           <img
             src={src}
             alt={`Slide ${index + 1}`}
-            className="w-full h-full object-cover transform scale-105"
+            className={`w-full h-full object-cover ${
+              index === currentIndex ? 'animate-slow-zoom' : 'transform scale-115'
+            }`}
             referrerPolicy="no-referrer"
           />
         </div>

@@ -270,26 +270,37 @@ const App: React.FC = () => {
     <div className={`min-h-screen flex flex-col font-sans transition-colors duration-300 ${isDarkMode ? 'bg-[#0d0d0d] text-white' : 'bg-white text-primary'} relative overflow-x-hidden`}>
       <nav className={`fixed top-0 w-full z-50 glass-morphism border-b ${isDarkMode ? 'border-white/10' : 'border-gray-100'}`}>
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="flex flex-col">
-            <div className="flex items-center space-x-2 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-              <div className="w-8 h-8 bg-primary dark:bg-accent rounded-lg flex items-center justify-center transition-colors">
-                <span className="text-white font-serif font-bold italic">D</span>
-              </div>
-              <span className="font-serif text-xl font-bold tracking-tight leading-[0.85] dark:text-white transition-colors">
+          <div className="flex items-start space-x-2">
+            <div className="cursor-pointer flex-shrink-0" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+              <img 
+                src="https://www.image2url.com/r2/default/images/1779451396078-8d666ff6-50b9-4276-a4a8-f7b4e9d7339c.png" 
+                alt="D" 
+                className="w-10 h-10 object-contain rounded"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+            <div className="flex flex-col">
+              <span 
+                className="font-serif text-xl font-bold tracking-tight leading-[0.85] dark:text-white transition-colors cursor-pointer"
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              >
                 DIGITALIN<br />STUDIO
               </span>
+              <button 
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsDarkMode(!isDarkMode);
+                }}
+                className="mt-1 flex items-center space-x-1.5 text-[10px] uppercase tracking-widest font-bold text-gray-400 hover:text-accent transition-colors w-fit"
+              >
+                <span>{isDarkMode ? 'Light Mode' : 'Dark Mode'}</span>
+                {isDarkMode ? (
+                  <Sun className="w-3 h-3" />
+                ) : (
+                  <Moon className="w-3 h-3" />
+                )}
+              </button>
             </div>
-            <button 
-              onClick={() => setIsDarkMode(!isDarkMode)}
-              className="mt-1 ml-10 flex items-center space-x-2 text-[10px] uppercase tracking-widest font-bold text-gray-400 hover:text-accent transition-colors"
-            >
-              <span>{isDarkMode ? 'Light Mode' : 'Dark Mode'}</span>
-              {isDarkMode ? (
-                <Sun className="w-3 h-3" />
-              ) : (
-                <Moon className="w-3 h-3" />
-              )}
-            </button>
           </div>
           
           <div className="flex items-center space-x-4 md:space-x-8">
