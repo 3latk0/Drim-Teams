@@ -452,7 +452,7 @@ const App: React.FC = () => {
                   <Facebook className="w-6 h-6 group-hover:stroke-[2.5px] group-hover:text-white" />
                 </a>
                 <a 
-                  href="tel:+070767902" 
+                  href="tel:+38970767902" 
                   className={`w-14 h-14 rounded-[1rem] flex items-center justify-center transition-all shadow-sm group ${isDarkMode ? 'bg-white/10 text-gray-400 hover:bg-accent' : 'bg-gray-50 text-gray-400 hover:bg-accent hover:text-white hover:scale-110'}`}
                   title="Phone"
                 >

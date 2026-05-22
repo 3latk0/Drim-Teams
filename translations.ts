@@ -105,7 +105,7 @@ export const translations = {
       noteLabel: "Additional Note",
       notePlaceholder: "Tell us more about your event...",
       sendButton: "Send Request via Email",
-      successAlert: "Thank you for your request! We appreciate you reaching out and will contact you in the shortest possible time."
+      successAlert: "We appreciate you reaching out and will contact you in the shortest possible time."
     },
     chat: {
       title: "Session Consultant",
@@ -229,7 +229,7 @@ export const translations = {
       noteLabel: "Дополнителна забелешка",
       notePlaceholder: "Кажете ни повеќе за вашиот настан...",
       sendButton: "Испрати барање преку е-пошта",
-      successAlert: "Ви благодариме за вашето барање! Ви благодариме што ни се обративте, ќе Ве контактираме во најкраток можен рок."
+      successAlert: "Ви благодариме што ни се обративте, ќе Ве контактираме во најкраток можен рок."
     },
     chat: {
       title: "Консултант за сесии",
@@ -353,7 +353,7 @@ export const translations = {
       noteLabel: "Shënim Shtesë",
       notePlaceholder: "Na tregoni më shumë për eventin tuaj...",
       sendButton: "Dërgo Kërkesën me Email",
-      successAlert: "Ju faleminderit për kërkesën tuaj! Ju falënderojmë që na kontaktuat, do t'ju kontaktojmë në kohën më të shkurtër të mundshme."
+      successAlert: "Ju falënderojmë që na kontaktuat, do t'ju kontaktojmë në kohën më të shkurtër të mundshme."
     },
     chat: {
       title: "Konsulent i Sesionit",
@@ -477,7 +477,7 @@ export const translations = {
       noteLabel: "Ek Not",
       notePlaceholder: "Etkinliğiniz hakkında bize daha fazla bilgi verin...",
       sendButton: "Talebi E-posta ile Gönder",
-      successAlert: "Talebiniz için teşekkür ederiz! Bizimle iletişime geçtiğiniz için teşekkür ederiz, en kısa sürede sizinle iletişime geçeceğiz."
+      successAlert: "Bizimle iletişime geçtiğiniz için teşekkür ederiz, en kısa sürede sizinle iletişime geçeceğiz."
     },
     chat: {
       title: "Seans Danışmanı",
