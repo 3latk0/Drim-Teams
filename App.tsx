@@ -95,7 +95,7 @@ const App: React.FC = () => {
   const getHourPrice = useCallback((isSecond: boolean, pricing: PricingConstants) => 
     isSecond ? pricing.HOUR_PRICE * 2 : pricing.HOUR_PRICE, []);
 
-  const calculateTotal = useCallback((sel: Selection, pricing: PricingConstants, isPhoto: boolean = false, isBundle: boolean = false, isEarlyBird: boolean = false) => {
+  const calculateTotal = useCallback((sel: Selection, pricing: PricingConstants, isPhoto: boolean = false, isBundle: boolean = false, isEarlyBird: boolean = false, hasOtherDroneActive: boolean = false) => {
     if (!sel.serviceEnabled) return 0;
     let hourPrice = getHourPrice(sel.secondSpecialist, pricing);
     
@@ -112,13 +112,19 @@ const App: React.FC = () => {
     // Drone Multi-Discount Logic: First is full price, others are 50% off
     let droneCost = 0;
     if (sel.droneEnabled && sel.droneSessions > 0) {
-      droneCost = pricing.DRONE_PRICE + (sel.droneSessions - 1) * (pricing.DRONE_PRICE * DRONE_DISCOUNT_FACTOR);
+      if (hasOtherDroneActive) {
+        droneCost = sel.droneSessions * (pricing.DRONE_PRICE * DRONE_DISCOUNT_FACTOR);
+      } else {
+        droneCost = pricing.DRONE_PRICE + (sel.droneSessions - 1) * (pricing.DRONE_PRICE * DRONE_DISCOUNT_FACTOR);
+      }
     }
 
     const baseTotal = (
       (sel.hoursEnabled ? sel.hours * hourPrice : 0) +
       sessionCost +
-      (sel.booksEnabled ? sel.books * pricing.BOOK_PRICE : 0) +
+      (sel.booksEnabled && sel.books > 0
+        ? pricing.BOOK_PRICE + (sel.books - 1) * (pricing.BOOK_ADDITIONAL_PRICE ?? pricing.BOOK_PRICE)
+        : 0) +
       droneCost
     );
     return Math.round(baseTotal * COST_MULTIPLIER);
@@ -142,8 +148,19 @@ const App: React.FC = () => {
   const isBundle = photoSelection.serviceEnabled && videoSelection.serviceEnabled;
   const isEarlyBird = new Date(eventSchedule.date) < new Date('2028-01-01');
 
-  const currentPhotoTotal = useMemo(() => calculateTotal(photoSelection, PHOTO_PRICING, true, isBundle, isEarlyBird), [photoSelection, calculateTotal, isBundle, isEarlyBird]);
-  const currentVideoTotal = useMemo(() => calculateTotal(videoSelection, VIDEO_PRICING, false, isBundle, isEarlyBird), [videoSelection, calculateTotal, isBundle, isEarlyBird]);
+  const photoDroneActive = photoSelection.serviceEnabled && photoSelection.droneEnabled && photoSelection.droneSessions > 0;
+  const videoDroneActive = videoSelection.serviceEnabled && videoSelection.droneEnabled && videoSelection.droneSessions > 0;
+
+  const currentPhotoTotal = useMemo(() => {
+    const hasOtherActive = videoDroneActive && (photoSelection.droneSessions === 0 || !photoSelection.droneEnabled);
+    return calculateTotal(photoSelection, PHOTO_PRICING, true, isBundle, isEarlyBird, hasOtherActive);
+  }, [photoSelection, calculateTotal, isBundle, isEarlyBird, videoDroneActive]);
+
+  const currentVideoTotal = useMemo(() => {
+    const hasOtherActive = photoDroneActive;
+    return calculateTotal(videoSelection, VIDEO_PRICING, false, isBundle, isEarlyBird, hasOtherActive);
+  }, [videoSelection, calculateTotal, isBundle, isEarlyBird, photoDroneActive]);
+
   const currentContentTotal = useMemo(() => calculateTotal(contentSelection, CONTENT_PRICING), [contentSelection, calculateTotal]);
 
   const grandTotal = currentPhotoTotal + currentVideoTotal + currentContentTotal;
@@ -381,6 +398,13 @@ const App: React.FC = () => {
                     isBundle={isBundle}
                     isEarlyBird={isEarlyBird}
                     isDarkMode={isDarkMode}
+                    hasOtherDroneActive={
+                      srv.type === 'photo'
+                        ? (videoSelection.serviceEnabled && videoSelection.droneEnabled && videoSelection.droneSessions > 0 && photoSelection.droneSessions === 0)
+                        : srv.type === 'video'
+                          ? (photoSelection.serviceEnabled && photoSelection.droneEnabled && photoSelection.droneSessions > 0)
+                          : false
+                    }
                   />
                 )}
               </div>

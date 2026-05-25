@@ -16,6 +16,7 @@ interface BudgetAllocationProps {
   isBundle?: boolean;
   isEarlyBird?: boolean;
   isDarkMode?: boolean;
+  hasOtherDroneActive?: boolean;
 }
 
 const BudgetAllocation: React.FC<BudgetAllocationProps> = ({ 
@@ -29,7 +30,8 @@ const BudgetAllocation: React.FC<BudgetAllocationProps> = ({
   allowedItems = ['hours', 'sessions', 'books', 'droneSessions'],
   isBundle = false,
   isEarlyBird = false,
-  isDarkMode = false
+  isDarkMode = false,
+  hasOtherDroneActive = false
 }) => {
   const t = translations[lang].services;
   // Base hourly price calculation
@@ -57,7 +59,10 @@ const BudgetAllocation: React.FC<BudgetAllocationProps> = ({
 
   // Drone Discount Math: First is full price, subsequent are discounted
   const droneCost = selection.droneEnabled && selection.droneSessions > 0
-    ? pricing.DRONE_PRICE + (selection.droneSessions - 1) * (pricing.DRONE_PRICE * DRONE_DISCOUNT_FACTOR)
+    ? (hasOtherDroneActive
+        ? selection.droneSessions * (pricing.DRONE_PRICE * DRONE_DISCOUNT_FACTOR)
+        : pricing.DRONE_PRICE + (selection.droneSessions - 1) * (pricing.DRONE_PRICE * DRONE_DISCOUNT_FACTOR)
+      )
     : 0;
 
   const booksCost = selection.booksEnabled && selection.books > 0
@@ -118,7 +123,7 @@ const BudgetAllocation: React.FC<BudgetAllocationProps> = ({
       price: pricing.DRONE_PRICE, 
       unitLabel: t.perSession,
       min: 0,
-      isDiscounted: selection.droneSessions > 1
+      isDiscounted: hasOtherDroneActive || selection.droneSessions > 1
     },
   ];
 
@@ -175,7 +180,10 @@ const BudgetAllocation: React.FC<BudgetAllocationProps> = ({
                   (item.id === 'sessions' && item.isFree 
                     ? Math.max(0, item.count - 1) * item.price 
                     : item.id === 'droneSessions' && item.count > 0 
-                      ? pricing.DRONE_PRICE + (item.count - 1) * (pricing.DRONE_PRICE * DRONE_DISCOUNT_FACTOR)
+                      ? (hasOtherDroneActive
+                          ? item.count * (pricing.DRONE_PRICE * DRONE_DISCOUNT_FACTOR)
+                          : pricing.DRONE_PRICE + (item.count - 1) * (pricing.DRONE_PRICE * DRONE_DISCOUNT_FACTOR)
+                        )
                       : item.id === 'books' && item.count > 0 && pricing.BOOK_ADDITIONAL_PRICE
                         ? pricing.BOOK_PRICE + (item.count - 1) * pricing.BOOK_ADDITIONAL_PRICE
                         : item.count * item.price

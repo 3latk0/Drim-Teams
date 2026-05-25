@@ -102,7 +102,7 @@ export const translations = {
       location: "Location",
       phone: "Phone",
       summaryLabel: "Selected Package Summary",
-      noteLabel: "Additional Note",
+      noteLabel: "Additional Note (in Macedonian or English please)",
       notePlaceholder: "Tell us more about your event...",
       sendButton: "Send Request via Email",
       successAlert: "We appreciate you reaching out and will contact you in the shortest possible time."
@@ -226,7 +226,7 @@ export const translations = {
       location: "Локација",
       phone: "Телефон",
       summaryLabel: "Преглед на избраниот пакет",
-      noteLabel: "Дополнителна забелешка",
+      noteLabel: "Дополнителна забелешка (ве молиме на македонски или англиски)",
       notePlaceholder: "Кажете ни повеќе за вашиот настан...",
       sendButton: "Испрати барање преку е-пошта",
       successAlert: "Ви благодариме што ни се обративте, ќе Ве контактираме во најкраток можен рок."
@@ -350,7 +350,7 @@ export const translations = {
       location: "Lokacioni",
       phone: "Telefoni",
       summaryLabel: "Përmbledhja e Paketës së Zgjedhur",
-      noteLabel: "Shënim Shtesë",
+      noteLabel: "Shënim Shtesë (në maqedonisht ose anglisht ju lutem)",
       notePlaceholder: "Na tregoni më shumë për eventin tuaj...",
       sendButton: "Dërgo Kërkesën me Email",
       successAlert: "Ju falënderojmë që na kontaktuat, do t'ju kontaktojmë në kohën më të shkurtër të mundshme."
@@ -474,7 +474,7 @@ export const translations = {
       location: "Konum",
       phone: "Telefon",
       summaryLabel: "Seçilen Paket Özeti",
-      noteLabel: "Ek Not",
+      noteLabel: "Ek Not (lütfen Makedonca veya İngilizce)",
       notePlaceholder: "Etkinliğiniz hakkında bize daha fazla bilgi verin...",
       sendButton: "Talebi E-posta ile Gönder",
       successAlert: "Bizimle iletişime geçtiğiniz için teşekkür ederiz, en kısa sürede sizinle iletişime geçeceğiz."
