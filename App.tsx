@@ -308,13 +308,15 @@ const App: React.FC = () => {
                   e.stopPropagation();
                   setIsDarkMode(!isDarkMode);
                 }}
-                className="mt-2 flex items-center space-x-1.5 text-[9px] md:text-[10px] uppercase tracking-widest font-bold transition-all px-2.5 py-1 rounded-none border-2 border-accent text-accent bg-accent/5 hover:bg-accent/15 shadow-sm"
+                className={`mt-2 flex items-center space-x-1.5 text-[9px] md:text-[10px] uppercase tracking-widest font-bold transition-all px-2.5 py-1 rounded-none border-2 border-accent bg-accent/5 hover:bg-accent/15 shadow-sm ${
+                  isDarkMode ? 'text-accent' : 'text-black'
+                }`}
               >
                 <span>{isDarkMode ? 'Light Mode' : 'Dark Mode'}</span>
                 {isDarkMode ? (
                   <Sun className="w-3 h-3 text-amber-400" />
                 ) : (
-                  <Moon className="w-3 h-3 text-indigo-500" />
+                  <Moon className="w-3 h-3 text-black" />
                 )}
               </button>
             </div>
