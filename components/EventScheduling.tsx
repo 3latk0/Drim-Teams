@@ -171,7 +171,7 @@ const EventScheduling: React.FC<EventSchedulingProps> = ({
               <input type="checkbox" checked={videoEnabled} onChange={(e) => onToggleVideo(e.target.checked)} className="w-5 h-5 accent-accent rounded cursor-pointer" />
             </label>
 
-            <label className={`flex items-center justify-between py-3 px-4 rounded-2xl border transition-all cursor-pointer group ${contentEnabled ? 'bg-accent/5 border-accent/40 shadow-sm' : isDarkMode ? 'bg-white/5 border-white/10 opacity-60' : 'bg-gray-50 border-gray-100 opacity-60'}`}>
+            <label className={`flex items-center justify-between py-3 px-4 rounded-2xl border transition-all cursor-pointer group ${contentEnabled ? 'bg-accent/5 border-accent shadow-sm' : isDarkMode ? 'bg-white/5 border-white/10 opacity-60' : 'bg-gray-50 border-gray-100 opacity-60'}`}>
               <div className="flex items-center space-x-3">
                 <span className={`text-[13.8px] font-bold uppercase tracking-widest transition-colors ${contentEnabled ? (isDarkMode ? 'text-white' : 'text-primary') : 'text-gray-400'}`}>{t.contentCreator}</span>
               </div>
