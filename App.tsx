@@ -303,30 +303,30 @@ const App: React.FC = () => {
               >
                 DIGITALIN<br />STUDIO
               </span>
-              <button 
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setIsDarkMode(!isDarkMode);
-                }}
-                className="mt-2 flex items-center space-x-1.5 text-[9px] md:text-[10px] uppercase tracking-widest font-bold transition-all px-2.5 py-1 rounded-none border-2 border-accent text-accent bg-accent/5 hover:bg-accent/15 shadow-sm"
-              >
-                <span>{isDarkMode ? 'Light Mode' : 'Dark Mode'}</span>
-                {isDarkMode ? (
-                  <Sun className="w-3 h-3 text-amber-400" />
-                ) : (
-                  <Moon className="w-3 h-3 text-indigo-500" />
-                )}
-              </button>
             </div>
           </div>
           
-          <div className="flex items-center space-x-4 md:space-x-8">
+          <div className="flex flex-col items-end space-y-2">
             <div className="flex space-x-2 md:space-x-3 items-center">
                <button onClick={() => setLang('en')} className={`w-7 h-7 rounded-full flex items-center justify-center text-lg hover:scale-110 transition-transform ${lang === 'en' ? 'ring-2 ring-accent ring-offset-2 dark:ring-offset-[#1a1a1a]' : 'grayscale opacity-60'}`}>🇺🇸</button>
                <button onClick={() => setLang('mk')} className={`w-7 h-7 rounded-full flex items-center justify-center text-lg hover:scale-110 transition-transform ${lang === 'mk' ? 'ring-2 ring-accent ring-offset-2 dark:ring-offset-[#1a1a1a]' : 'grayscale opacity-60'}`}>🇲🇰</button>
                <button onClick={() => setLang('sq')} className={`w-7 h-7 rounded-full flex items-center justify-center text-lg hover:scale-110 transition-transform ${lang === 'sq' ? 'ring-2 ring-accent ring-offset-2 dark:ring-offset-[#1a1a1a]' : 'grayscale opacity-60'}`}>🇦🇱</button>
                <button onClick={() => setLang('tr')} className={`w-7 h-7 rounded-full flex items-center justify-center text-lg hover:scale-110 transition-transform ${lang === 'tr' ? 'ring-2 ring-accent ring-offset-2 dark:ring-offset-[#1a1a1a]' : 'grayscale opacity-60'}`}>🇹🇷</button>
             </div>
+            <button 
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsDarkMode(!isDarkMode);
+              }}
+              className="flex items-center space-x-1.5 text-[9px] md:text-[10px] uppercase tracking-widest font-bold transition-all px-2.5 py-1 rounded-none border-2 border-accent text-accent bg-accent/5 hover:bg-accent/15 shadow-sm"
+            >
+              <span>{isDarkMode ? 'Light Mode' : 'Dark Mode'}</span>
+              {isDarkMode ? (
+                <Sun className="w-3 h-3 text-amber-400" />
+              ) : (
+                <Moon className="w-3 h-3 text-indigo-500" />
+              )}
+            </button>
           </div>
         </div>
       </nav>
