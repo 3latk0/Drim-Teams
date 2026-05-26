@@ -323,7 +323,7 @@ const App: React.FC = () => {
           </div>
           
           <div className="flex items-center space-x-4 md:space-x-8">
-            <div className="flex space-x-2 md:space-x-3 items-center">
+            <div className="grid grid-cols-2 gap-2 md:gap-3 items-center">
                <button onClick={() => setLang('en')} className={`w-7 h-7 rounded-full flex items-center justify-center text-lg hover:scale-110 transition-transform ${lang === 'en' ? 'ring-2 ring-accent ring-offset-2 dark:ring-offset-[#1a1a1a]' : 'grayscale opacity-60'}`}>🇺🇸</button>
                <button onClick={() => setLang('mk')} className={`w-7 h-7 rounded-full flex items-center justify-center text-lg hover:scale-110 transition-transform ${lang === 'mk' ? 'ring-2 ring-accent ring-offset-2 dark:ring-offset-[#1a1a1a]' : 'grayscale opacity-60'}`}>🇲🇰</button>
                <button onClick={() => setLang('sq')} className={`w-7 h-7 rounded-full flex items-center justify-center text-lg hover:scale-110 transition-transform ${lang === 'sq' ? 'ring-2 ring-accent ring-offset-2 dark:ring-offset-[#1a1a1a]' : 'grayscale opacity-60'}`}>🇦🇱</button>
