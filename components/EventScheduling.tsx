@@ -102,7 +102,7 @@ const EventScheduling: React.FC<EventSchedulingProps> = ({
   };
 
   const duration = calculateDuration();
-  const selectBaseStyles = `bg-gray-50 border border-gray-100 rounded-2xl px-3 py-2.5 focus:ring-2 focus:ring-accent/20 focus:outline-none transition-all font-medium appearance-none cursor-pointer text-[16.1px] ${isDarkMode ? 'bg-white/5 border-white/10 text-white' : 'bg-gray-50 border-gray-100 text-primary'}`;
+  const selectBaseStyles = `bg-gray-50 border border-gray-100 rounded-2xl px-2 md:px-3 py-2.5 focus:ring-2 focus:ring-accent/20 focus:outline-none transition-all font-medium appearance-none cursor-pointer text-[14.5px] md:text-[16.1px] ${isDarkMode ? 'bg-white/5 border-white/10 text-white' : 'bg-gray-50 border-gray-100 text-primary'}`;
 
   return (
     <div className="w-full mb-12">
@@ -112,19 +112,19 @@ const EventScheduling: React.FC<EventSchedulingProps> = ({
       </div>
 
       <div className={`shadow-xl rounded-[2.5rem] py-6 px-8 md:py-8 md:px-10 space-y-8 transition-colors ${isDarkMode ? 'bg-white/5 border border-white/10' : 'bg-white border border-gray-100'}`}>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-end">
+        <div className="grid grid-cols-1 md:grid-cols-[1.3fr_0.85fr_0.85fr] gap-4 md:gap-5 lg:gap-8 items-end">
           <div className="space-y-2">
             <label className="text-[11.5px] font-bold uppercase tracking-widest text-accent flex items-center">
               {t.dateLabel}
             </label>
             <div className="flex gap-2">
-              <select value={currentDay} onChange={(e) => handleDatePartChange('day', e.target.value)} className={`${selectBaseStyles} flex-[0.6] w-0`}>
+              <select value={currentDay} onChange={(e) => handleDatePartChange('day', e.target.value)} className={`${selectBaseStyles} flex-[0.7] w-0 min-w-[48px]`}>
                 {days.map(d => <option key={d} value={d} className={isDarkMode ? 'bg-[#1a1a1a]' : ''}>{d}</option>)}
               </select>
-              <select value={currentMonth} onChange={(e) => handleDatePartChange('month', e.target.value)} className={`${selectBaseStyles} flex-[1.6] w-0`}>
+              <select value={currentMonth} onChange={(e) => handleDatePartChange('month', e.target.value)} className={`${selectBaseStyles} flex-[1.5] w-0 min-w-[95px]`}>
                 {monthOptions.map(m => <option key={m.val} value={m.val} className={isDarkMode ? 'bg-[#1a1a1a]' : ''}>{m.name}</option>)}
               </select>
-              <select value={currentYear} onChange={(e) => handleDatePartChange('year', e.target.value)} className={`${selectBaseStyles} flex-[1] w-0`}>
+              <select value={currentYear} onChange={(e) => handleDatePartChange('year', e.target.value)} className={`${selectBaseStyles} flex-[1.2] w-0 min-w-[76px]`}>
                 {years.map(y => <option key={y} value={y} className={isDarkMode ? 'bg-[#1a1a1a]' : ''}>{y}</option>)}
               </select>
             </div>
