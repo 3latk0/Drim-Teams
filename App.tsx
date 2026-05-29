@@ -333,15 +333,15 @@ const App: React.FC = () => {
 
       <header className={`pt-32 pb-16 px-6 transition-colors duration-300 ${isDarkMode ? 'bg-[#121212]' : 'bg-[#fafafa]'}`}>
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
-            <h1 className="text-[1.8rem] xs:text-[2.2rem] sm:text-[3rem] md:text-[4.05rem] font-serif font-bold leading-tight break-words dark:text-white transition-colors">
+          <div className="space-y-8 text-center md:text-left">
+            <h1 className="text-[2.25rem] xs:text-[2.75rem] sm:text-[2.25rem] md:text-[3.04rem] lg:text-[4.05rem] font-serif font-bold leading-tight break-words dark:text-white transition-colors">
               {t.hero.title.split(' ')[0]} <br />
               <span className="text-accent italic">{t.hero.title.split(' ')[1]}</span> <br />
               {t.hero.title.split(' ').slice(2).join(' ')}
             </h1>
-            <div className="space-y-4">
-              <p className="text-lg text-gray-500 dark:text-gray-400 max-w-md leading-relaxed transition-colors">{t.hero.description}</p>
-              <p className="text-lg text-gray-500 dark:text-gray-400 font-semibold max-w-md leading-relaxed transition-colors">{t.hero.descriptionPromo}</p>
+            <div className="space-y-4 max-w-md mx-auto md:mx-0">
+              <p className="text-lg text-gray-500 dark:text-gray-400 leading-relaxed transition-colors">{t.hero.description}</p>
+              <p className="text-lg text-gray-500 dark:text-gray-400 font-semibold leading-relaxed transition-colors">{t.hero.descriptionPromo}</p>
             </div>
           </div>
           <div className="relative">

@@ -8,7 +8,7 @@ export const translations = {
       bookNow: "Book Now"
     },
     hero: {
-      title: "Capturing Timeless Moments.",
+      title: "Capturing Timeless Moments",
       description: "Professional wedding services tailored to your budget. From photography to cinematic videography, we frame your story with elegance.",
       descriptionPromo: "To celebrate the 20th season of our wedding studio, we’re giving all couples a special 20% discount on our wedding photo and video services, valid for season 26/27!",
       planButton: "Plan Your Session",
@@ -132,7 +132,7 @@ export const translations = {
       bookNow: "Резервирај"
     },
     hero: {
-      title: "Зачувување безвременски моменти.",
+      title: "Зачувување безвременски моменти",
       description: "Професионални свадбени услуги прилагодени на вашиот буџет. Од фотографија до кинематографска видеографија, ја врамуваме вашата приказна со елеганција.",
       descriptionPromo: "По повод 20-тата сезона на нашето свадбено студио, им доделуваме на сите парови специјален попуст од 20% на нашите услуги за свадбена фотографија и видео, со важност за сезона 26/27!",
       planButton: "Планирајте сесија",
@@ -256,7 +256,7 @@ export const translations = {
       bookNow: "Rezervo Tani"
     },
     hero: {
-      title: "Kapja e Momenteve të Përjetshme.",
+      title: "Kapja e Momenteve të Përjetshme",
       description: "Shërbime profesionale dasme të përshtatura për buxhetin tuaj. Nga fotografia te videografia kinematografike, ne kornizojmë historinë tuaj me elegancë.",
       descriptionPromo: "Për të festuar sezonin e 20-të të studios sonë të dasmave, ne po u japim të gjithë çifteve një zbritje speciale prej 20% në shërbimet tona të fotografisë dhe videove të dasmës, e vlefshme për sezonin 26/27!",
       planButton: "Planifikoni Sesionin",
@@ -380,7 +380,7 @@ export const translations = {
       bookNow: "Rezervasyon"
     },
     hero: {
-      title: "Zamanı Aşan Anları Yakalıyoruz.",
+      title: "Zamanı Aşan Anları Yakalıyoruz",
       description: "Bütçenize göre özelleştirilmiş profesyonel düğün hizmetleri. Fotoğrafçılıktan sinematik videografi hizmetine kadar hikayenizi zarafetle şekillendiriyoruz.",
       descriptionPromo: "Düğün stüdyomuzun 20. sezonunu kutlamak amacıyla, tüm çiftlerimize düğün fotoğrafı ve video hizmetlerimizde 26/27 sezonu için geçerli özel %20 indirim sunuyoruz!",
       planButton: "Çekiminizi Planlayın",
