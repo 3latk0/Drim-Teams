@@ -334,7 +334,7 @@ const App: React.FC = () => {
       <header className={`pt-32 pb-16 px-6 transition-colors duration-300 ${isDarkMode ? 'bg-[#121212]' : 'bg-[#fafafa]'}`}>
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
-            <h1 className="text-[3.375rem] md:text-[4.05rem] font-serif font-bold leading-tight dark:text-white transition-colors">
+            <h1 className="text-[1.8rem] xs:text-[2.2rem] sm:text-[3rem] md:text-[4.05rem] font-serif font-bold leading-tight break-words dark:text-white transition-colors">
               {t.hero.title.split(' ')[0]} <br />
               <span className="text-accent italic">{t.hero.title.split(' ')[1]}</span> <br />
               {t.hero.title.split(' ').slice(2).join(' ')}
@@ -370,7 +370,7 @@ const App: React.FC = () => {
               <div className={`${isDarkMode ? 'bg-white/5 border-white/10' : 'bg-gray-50/50 border-gray-100'} py-6 px-4 md:py-10 md:px-12 rounded-[2rem] border max-w-7xl mx-auto transition-colors`}>
                 <div className="mb-4 text-center flex flex-col items-center">
                   <div className="flex items-center justify-center space-x-3 mb-4 group cursor-pointer" onClick={() => srv.toggle(!srv.selection.serviceEnabled)}>
-                    <h3 className={`text-[21.6px] md:text-[40px] uppercase tracking-[0.1em] md:tracking-[0.2em] font-serif font-bold block transition-colors ${srv.selection.serviceEnabled ? (isDarkMode ? 'text-white' : 'text-gray-400') : (isDarkMode ? 'text-white/30' : 'text-gray-300')}`}>
+                    <h3 className={`text-[1.15rem] xs:text-[1.4rem] sm:text-[2rem] md:text-[40px] uppercase tracking-[0.05em] md:tracking-[0.2em] font-serif font-bold block break-words transition-all ${srv.selection.serviceEnabled ? (isDarkMode ? 'text-white' : 'text-gray-400') : (isDarkMode ? 'text-white/30' : 'text-gray-300')}`}>
                       {srv.label}
                     </h3>
                     <input 
@@ -424,9 +424,9 @@ const App: React.FC = () => {
                  </div>
                  <div className={`pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-6 transition-colors ${isDarkMode ? 'border-white/10' : 'border-primary/10'}`}>
                    <div className="flex-1 w-full overflow-hidden">
-                     <div className={`flex items-center justify-between text-xs font-bold p-4 rounded-2xl border shadow-sm transition-colors ${isDarkMode ? 'bg-black/50 border-white/10 text-white' : 'bg-white/50 border-primary/10 text-primary'}`}>
-                        <span className="uppercase tracking-widest opacity-60">{t.footer.calculatedInvestment}</span>
-                        <span className={`text-3xl md:text-4xl font-serif flex flex-col items-end transition-colors ${isDarkMode ? 'text-white' : 'text-primary'}`}>
+                     <div className={`flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs font-bold p-4 rounded-2xl border shadow-sm transition-colors ${isDarkMode ? 'bg-black/50 border-white/10 text-white' : 'bg-white/50 border-primary/10 text-primary'}`}>
+                        <span className="uppercase tracking-widest opacity-60 break-words">{t.footer.calculatedInvestment}</span>
+                        <span className={`text-2xl sm:text-3xl md:text-4xl font-serif flex flex-col items-start sm:items-end break-all transition-colors ${isDarkMode ? 'text-white' : 'text-primary'}`}>
                           <span>{grandTotal} €</span>
                           <span className="text-sm md:text-lg font-sans opacity-60 font-normal italic">
                             ({Math.round(grandTotal * 61.5).toLocaleString()} {t.footer.denarSuffix})
@@ -437,7 +437,7 @@ const App: React.FC = () => {
                    <button 
                       onClick={() => setIsModalOpen(true)} 
                       disabled={grandTotal === 0}
-                      className={`w-full md:w-auto px-8 md:px-10 py-5 rounded-full font-bold uppercase tracking-widest text-[10px] md:text-xs transition-transform shadow-lg whitespace-nowrap ${
+                      className={`w-full md:w-auto px-8 md:px-10 py-5 rounded-full font-bold uppercase tracking-widest text-[10px] md:text-xs transition-colors shadow-lg whitespace-normal break-words text-center md:whitespace-nowrap ${
                         grandTotal === 0
                           ? 'bg-gray-300 dark:bg-zinc-800 text-gray-400 dark:text-gray-500 cursor-not-allowed opacity-50'
                           : `hover:scale-105 ${isDarkMode ? 'bg-accent text-white hover:bg-accent/90' : 'bg-primary text-white hover:bg-gray-800'}`
@@ -583,9 +583,9 @@ const App: React.FC = () => {
 
       <footer className={`fixed bottom-0 left-0 w-full z-40 glass-morphism border-t py-4 px-6 md:px-12 transition-colors ${isDarkMode ? 'border-white/10' : 'border-gray-200'}`}>
         <div className="max-w-7xl mx-auto flex items-center justify-center text-center">
-          <div className="flex flex-col lg:flex-row items-center gap-1 lg:gap-4 overflow-hidden w-full justify-center lg:justify-between">
-            <p className={`text-[9px] md:text-xs uppercase tracking-[0.1em] md:tracking-[0.3em] font-bold whitespace-nowrap transition-colors ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>{t.footer.calculatedInvestment}</p>
-            <p className={`text-xl md:text-4xl font-serif font-bold whitespace-nowrap transition-colors ${isDarkMode ? 'text-white' : 'text-primary'}`}>
+          <div className="flex flex-col lg:flex-row items-center gap-1 lg:gap-4 w-full justify-center lg:justify-between py-1">
+            <p className={`text-[10px] md:text-xs uppercase tracking-[0.1em] md:tracking-[0.3em] font-bold whitespace-normal lg:whitespace-nowrap break-words transition-colors ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>{t.footer.calculatedInvestment}</p>
+            <p className={`text-lg xs:text-xl md:text-4xl font-serif font-bold whitespace-normal lg:whitespace-nowrap break-words transition-colors ${isDarkMode ? 'text-white' : 'text-primary'}`}>
               {grandTotal} € <span className="text-xs md:text-xl font-sans opacity-50 font-normal">({Math.round(grandTotal * 61.5).toLocaleString()} {t.footer.denarSuffix})</span>
             </p>
           </div>

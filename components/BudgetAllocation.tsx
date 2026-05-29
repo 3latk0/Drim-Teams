@@ -159,23 +159,23 @@ const BudgetAllocation: React.FC<BudgetAllocationProps> = ({
             }`}
           >
             {/* Header info */}
-            <div className="flex justify-between items-start mb-1 gap-2">
+            <div className="flex flex-row flex-wrap justify-between items-start mb-1 gap-2">
               <div className="flex flex-col min-w-0 flex-1">
-                <h4 className={`text-[14.4px] md:text-lg font-bold leading-tight pt-1 transition-colors ${isDarkMode ? 'text-white' : 'text-gray-800'}`}>
+                <h4 className={`text-[14.4px] md:text-lg font-bold leading-tight pt-1 transition-colors break-words ${isDarkMode ? 'text-white' : 'text-gray-800'}`}>
                   {item.name}
                 </h4>
                 {item.id === 'sessions' && type === 'photo' && item.isFree && (
-                  <span className="text-[10.8px] md:text-xs font-black text-accent uppercase tracking-tighter bg-accent/10 px-1.5 py-0.5 rounded inline-block w-fit mt-1">
+                  <span className="text-[10.8px] md:text-xs font-black text-accent uppercase tracking-tighter bg-accent/10 px-1.5 py-0.5 rounded inline-block w-fit mt-1 break-words">
                     {t.freeSession}
                   </span>
                 )}
                 {item.id === 'droneSessions' && item.isDiscounted && (
-                  <span className="text-[10.8px] md:text-xs font-black text-accent uppercase tracking-tighter bg-accent/10 px-1.5 py-0.5 rounded inline-block w-fit mt-1">
+                  <span className="text-[10.8px] md:text-xs font-black text-accent uppercase tracking-tighter bg-accent/10 px-1.5 py-0.5 rounded inline-block w-fit mt-1 break-words">
                     {t.droneDiscount}
                   </span>
                 )}
               </div>
-              <div className={`text-[21.6px] md:text-xl font-bold text-accent px-2 py-1 rounded-lg whitespace-nowrap transition-colors ${isDarkMode ? 'bg-accent/20' : 'bg-accent/5'}`}>
+              <div className={`text-[18px] xs:text-[21.6px] md:text-xl font-bold text-accent px-2 py-1 rounded-lg transition-colors inline-block w-fit break-all shrink-0 ${isDarkMode ? 'bg-accent/20' : 'bg-accent/5'}`}>
                 {Math.round(
                   (item.id === 'sessions' && item.isFree 
                     ? Math.max(0, item.count - 1) * item.price 
@@ -294,7 +294,7 @@ const BudgetAllocation: React.FC<BudgetAllocationProps> = ({
         <div className="flex flex-col items-center text-center">
           <div className="mb-4 w-full">
             <p className={`text-[12px] md:text-sm uppercase tracking-[0.05em] md:tracking-widest font-bold mb-1 break-words transition-colors ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>{labels.totalCost}</p>
-            <p className={`text-[36px] md:text-5xl font-serif font-bold whitespace-nowrap transition-colors ${isDarkMode ? 'text-white' : 'text-primary'}`}>
+            <p className={`text-[28px] xs:text-[32px] sm:text-[36px] md:text-5xl font-serif font-bold break-all transition-colors ${isDarkMode ? 'text-white' : 'text-primary'}`}>
               {selection.serviceEnabled ? actualTotalCost : 0} €
             </p>
           </div>

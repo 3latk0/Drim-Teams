@@ -106,8 +106,8 @@ const EventScheduling: React.FC<EventSchedulingProps> = ({
 
   return (
     <div className="w-full mb-12">
-      <div className="text-center mb-8">
-        <h2 className={`text-[41.4px] md:text-[57.5px] font-serif font-bold mb-4 transition-colors ${isDarkMode ? 'text-white' : 'text-primary'}`}>{t.title}</h2>
+      <div className="text-center mb-8 px-2">
+        <h2 className={`text-[1.85rem] xs:text-[2.2rem] sm:text-[3rem] md:text-[57.5px] font-serif font-bold mb-4 break-words transition-colors ${isDarkMode ? 'text-white' : 'text-primary'}`}>{t.title}</h2>
         <div className="w-20 h-[2px] bg-accent mx-auto"></div>
       </div>
 
